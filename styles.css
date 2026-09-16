@@ -735,3 +735,68 @@ svg { display: block; }
   .steps { grid-template-columns: 1fr; }
   .cta-card { padding: 48px 28px; }
 }
+
+/* ==========================================================================
+   Notes page
+   ========================================================================== */
+.notes-hero {
+  padding: 88px var(--gutter) 24px;
+  max-width: 720px;
+}
+
+.notes-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 16px 0;
+}
+
+.notes-intro {
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  max-width: 56ch;
+}
+
+.log-section { padding-top: 24px; }
+
+.log {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+}
+
+.log-entry {
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+}
+.log-entry:first-child { border-top: none; padding-top: 8px; }
+
+.log-date {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: 0.03em;
+  margin-bottom: 10px;
+}
+
+.log-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.log-body {
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+
+.log-body code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--surface-2);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
