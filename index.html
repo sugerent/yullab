@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yullab — AI Agent &amp; MCP Research</title>
+<meta name="description" content="Yullab documents the design and implementation work behind becoming an MCP expert. AI Agents are explored and learned together with other researchers.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-row">
+    <a href="#top" class="logo"><span class="logo-mark" aria-hidden="true"></span>Yullab</a>
+    <nav class="nav-links">
+      <a href="#research">Research</a>
+      <a href="#approach">Approach</a>
+      <a href="#ecosystem">Ecosystem</a>
+      <a href="#community">Collaborate</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero container">
+    <div class="hero-copy reveal">
+      <p class="pill"><span class="pill-dot"></span>YULLAB — AI AGENT &amp; MCP RESEARCH LAB</p>
+      <h1>
+        I research how<br>
+        AI agents <span class="text-gradient">connect</span><br>
+        with each other
+      </h1>
+      <p class="hero-sub">
+        Yullab documents the design and implementation work behind becoming an MCP expert.
+        AI Agents are explored and learned together with other researchers.
+      </p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-solid">Get in touch →</a>
+        <a href="#approach" class="btn btn-ghost">Read the notes</a>
+      </div>
+    </div>
+
+    <div class="hero-diagram-wrap reveal">
+      <div class="diagram-card">
+        <div class="diagram-card-head">
+          <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
+          <span class="diagram-card-title">MCP connection structure · example</span>
+        </div>
+        <svg viewBox="0 0 460 270" class="proto-svg" aria-hidden="true">
+          <rect x="24" y="36" width="210" height="170" rx="16" class="host-container"></rect>
+          <text x="40" y="60" class="host-label">HOST</text>
+
+          <path id="edge-cs" d="M 177 140 L 342 140" class="edge"></path>
+          <text x="259" y="126" text-anchor="middle" class="edge-label">MCP</text>
+
+          <circle class="packet" r="4.5">
+            <animateMotion dur="2.2s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear">
+              <mpath href="#edge-cs"></mpath>
+            </animateMotion>
+          </circle>
+
+          <g class="node node-accent" transform="translate(129,140)">
+            <rect x="-48" y="-22" width="96" height="44" rx="10"></rect>
+            <text y="5" text-anchor="middle" class="node-label">CLIENT</text>
+          </g>
+          <g class="node node-accent-2" transform="translate(390,140)">
+            <rect x="-48" y="-22" width="96" height="44" rx="10"></rect>
+            <text y="5" text-anchor="middle" class="node-label">SERVER</text>
+          </g>
+
+          <text x="129" y="232" text-anchor="middle" class="node-caption">Host application</text>
+          <text x="390" y="232" text-anchor="middle" class="node-caption">MCP server / tools</text>
+        </svg>
+      </div>
+      <p class="diagram-caption">The MCP client runs inside a host application (e.g. Claude Desktop) and talks to the server over a standard protocol.</p>
+    </div>
+  </section>
+
+  <section id="research" class="section">
+    <div class="container">
+      <p class="section-kicker reveal">§01 · Research</p>
+      <h2 class="section-title reveal">What I research</h2>
+
+      <div class="card-grid">
+        <article class="card reveal">
+          <div class="card-icon-badge badge-b">
+            <svg class="card-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M10 7 7.5 7A3.5 3.5 0 0 0 4 10.5v0A3.5 3.5 0 0 0 7.5 14H10"></path>
+              <path d="M14 7h2.5A3.5 3.5 0 0 1 20 10.5v0a3.5 3.5 0 0 1-3.5 3.5H14"></path>
+              <path d="M8 10.5h8"></path>
+            </svg>
+          </div>
+          <h3>MCP Protocol Research</h3>
+          <p>Centered on the Model Context Protocol — researching standardized ways to connect models with tools and data sources.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon-badge badge-c">
+            <svg class="card-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="3.5" y="7" width="11" height="11" rx="3"></rect>
+              <rect x="9.5" y="5" width="11" height="11" rx="3" class="icon-outline"></rect>
+            </svg>
+          </div>
+          <h3>AI Integration Consulting</h3>
+          <p>Designing and validating architectures that safely attach agents and MCP servers to existing systems.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-icon-badge badge-a">
+            <svg class="card-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="5" y="9" width="14" height="11" rx="3"></rect>
+              <path d="M12 9V6"></path>
+              <circle cx="12" cy="4.5" r="1.4"></circle>
+              <circle cx="9.5" cy="14.5" r="1.2" class="dot"></circle>
+              <circle cx="14.5" cy="14.5" r="1.2" class="dot"></circle>
+              <path d="M5 13H3M21 13h-2"></path>
+            </svg>
+          </div>
+          <h3>AI Agent Development</h3>
+          <p>Designing and building agent architectures that reason, call tools, and get goals done on their own.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="approach" class="section section-alt">
+    <div class="container">
+      <p class="section-kicker reveal">§02 · Approach</p>
+      <h2 class="section-title reveal">How I build</h2>
+
+      <ol class="steps">
+        <li class="reveal">
+          <p class="step-num">01</p>
+          <h3>Explore</h3>
+          <p>Define the problem, the constraints, and the boundaries of the existing system.</p>
+        </li>
+        <li class="reveal">
+          <p class="step-num">02</p>
+          <h3>Prototype</h3>
+          <p>Quickly build a working agent/MCP integration into something testable.</p>
+        </li>
+        <li class="reveal">
+          <p class="step-num">03</p>
+          <h3>Validate</h3>
+          <p>Check stability, reliability, and failure handling against real workflows.</p>
+        </li>
+        <li class="reveal">
+          <p class="step-num">04</p>
+          <h3>Integrate</h3>
+          <p>Connect it safely into how the existing system runs, and document it.</p>
+        </li>
+      </ol>
+      <p class="steps-note reveal">Each step builds on the result of the one before it.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container example-grid">
+      <div class="reveal">
+        <p class="section-kicker">Example</p>
+        <h2 class="section-title">How an MCP tool call works</h2>
+        <p class="community-text">
+          When a client calls a tool registered on the server, the server returns the result
+          in a standardized format. The example below is illustrative.
+        </p>
+      </div>
+      <div class="code-card reveal">
+        <div class="diagram-card-head">
+          <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
+          <span class="diagram-card-title">tools/call — example</span>
+        </div>
+        <pre class="code-block"><code><span class="code-muted">// client → server</span>
+<span class="code-key">"method"</span>: <span class="code-str">"tools/call"</span>,
+<span class="code-key">"params"</span>: {
+  <span class="code-key">"name"</span>: <span class="code-str">"search_shipments"</span>,
+  <span class="code-key">"arguments"</span>: { <span class="code-key">"port"</span>: <span class="code-str">"KRPUS"</span> }
+}
+
+<span class="code-muted">// server → client</span>
+<span class="code-key">"result"</span>: {
+  <span class="code-key">"content"</span>: [{ <span class="code-key">"type"</span>: <span class="code-str">"text"</span>, <span class="code-key">"text"</span>: <span class="code-str">"Found 3 results"</span> }]
+}</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="ecosystem" class="section section-alt">
+    <div class="container">
+      <p class="section-kicker reveal">§03 · Ecosystem</p>
+      <h2 class="section-title reveal">Clients that support MCP</h2>
+      <p class="community-text reveal">Yullab's research is validated against the real MCP client ecosystem below.</p>
+
+      <div class="logo-grid reveal">
+        <div class="logo-chip"><span class="logo-avatar"><img src="assets/icons/claude.png" alt="" loading="lazy"></span>Claude Desktop</div>
+        <div class="logo-chip"><span class="logo-avatar"><img src="assets/icons/claude.png" alt="" loading="lazy"></span>Claude Code</div>
+        <div class="logo-chip"><span class="logo-avatar"><img src="assets/icons/cursor.png" alt="" loading="lazy"></span>Cursor</div>
+        <div class="logo-chip"><span class="logo-avatar"><img src="assets/icons/vscode.png" alt="" loading="lazy"></span>VS Code</div>
+        <div class="logo-chip"><span class="logo-avatar"><img src="assets/icons/windsurf.png" alt="" loading="lazy"></span>Windsurf</div>
+        <div class="logo-chip"><span class="logo-avatar"><img src="assets/icons/cline.png" alt="" loading="lazy"></span>Cline</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="community" class="section">
+    <div class="container community-grid">
+      <div class="reveal">
+        <p class="section-kicker">§04 · Collaborate</p>
+        <h2 class="section-title">Recording and sharing</h2>
+        <p class="community-text">
+          Yullab is where I record and share my path toward becoming an MCP expert.
+          I don't start with answers — only what I've designed, built, and verified myself stays here.
+          I don't research AI Agents alone, though. If you're a developer or researcher who wants
+          to try things out and learn together, feel free to reach out.
+        </p>
+      </div>
+      <ul class="tag-list reveal">
+        <li><span class="tag-dot"></span>Multi-agent Orchestration</li>
+        <li><span class="tag-dot"></span>Tool-calling Reliability</li>
+        <li><span class="tag-dot"></span>MCP Server Design Patterns</li>
+        <li><span class="tag-dot"></span>Agent Observability</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="section section-cta">
+    <div class="container">
+      <div class="cta-card reveal">
+        <p class="section-kicker">§05 · Contact</p>
+        <h2 class="section-title">Let's talk about AI integration</h2>
+        <p class="contact-text">
+          Whether you're evaluating AI integration or have a topic you'd like to research together,
+          feel free to reach out.
+        </p>
+        <a href="mailto:de.akirus@gmail.com" class="btn btn-solid btn-large">de.akirus@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <a href="#top" class="logo footer-logo"><span class="logo-mark" aria-hidden="true"></span>Yullab</a>
+    <p class="footer-tagline">Documenting the design and implementation work behind becoming an MCP expert.</p>
+  </div>
+
+  <div class="container footer-links">
+    <div class="footer-col">
+      <p class="footer-col-title">Explore</p>
+      <a href="#research">Research</a>
+      <a href="#approach">Approach</a>
+      <a href="#ecosystem">Ecosystem</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-title">Contact</p>
+      <a href="mailto:de.akirus@gmail.com">de.akirus@gmail.com</a>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <span>© 2026 Yullab</span>
+  </div>
+</footer>
+
+<div id="cookie-banner" class="cookie-banner" hidden>
+  <p class="cookie-text">
+    This site doesn't use tracking cookies. It may use minimal browser storage,
+    such as remembering your display preferences.
+  </p>
+  <div class="cookie-actions">
+    <button type="button" class="btn-cookie btn-cookie-muted" data-cookie="decline">Decline</button>
+    <button type="button" class="btn-cookie btn-cookie-solid" data-cookie="accept">Accept</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
